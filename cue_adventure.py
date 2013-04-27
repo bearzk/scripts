@@ -1,20 +1,21 @@
 ## this is solustion to http://adventure.cueup.com/
-
 import webbrowser
 
 
 ####Question 1 Start####
 def VAXrand(seed):
-    res = ((69069 * seed + 1) % (2**32));
+    res = ((69069 * seed + 1) % (2 ** 32))
     return res
+
 
 def firstn(seed, n):
     tempseed = seed  # starting seed
     res = 0  # store result
 
     for i in range(n):
-        res = VAXrand(tempseed);
-        print "Starting seed: %d, seed mod 36: %d, result: %d, result mod 36: %d" % (tempseed, tempseed%36, res, res%36)
+        res = VAXrand(tempseed)
+        print "Starting seed: %d, seed mod 36: %d, result: %d, result mod 36: %d" \
+            % (tempseed, tempseed % 36, res, res % 36)
         tempseed = res
 
 
@@ -59,7 +60,7 @@ def unmatch_bracket_finder(testcase):
             #if this character is the respective close character
             #of the character that got popped off, we're good
             if closeBracket(f) == c:
-                print "All good at position %d" %  position
+                print "All good at position %d" % position
             #if the popped character isn't the respective close
             #character, then fail and report position
             elif closeBracket(f) != c:
@@ -68,6 +69,7 @@ def unmatch_bracket_finder(testcase):
         # print teststack
         position = position + 1
     print "first unmatch at position %d" % failed_postision[0]
+
 
 def Q2():
     print '############Question 2 Start############'
