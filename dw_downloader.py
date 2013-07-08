@@ -114,10 +114,10 @@ def download_and_save_under_name(url, path, name):
 
 
 def mkdir(cwd):
-    if not os.path.exists(cwd+'\mp3'):
-        os.mkdir(cwd+'\mp3')
-    if not os.path.exists(cwd+'\pdf'):
-        os.mkdir(cwd+'\pdf')
+    if not os.path.exists(cwd+'/mp3'):
+        os.mkdir(cwd+'/mp3')
+    if not os.path.exists(cwd+'/pdf'):
+        os.mkdir(cwd+'/pdf')
 
 
 def main():
@@ -143,8 +143,8 @@ def main():
     #download files
     for i, url in enumerate(entry_urls):
         mp3_url, pdf_url = find_pdf_and_mp3_url(url)
-        download_and_save_under_name(mp3_url, cwd+'\\mp3\\', filenames[i])
-        download_and_save_under_name(pdf_url, cwd+'\\pdf\\', filenames[i])
+        download_and_save_under_name(mp3_url, cwd+'/mp3/', filenames[i])
+        download_and_save_under_name(pdf_url, cwd+'/pdf/', filenames[i])
 
     print 'download finished.'
 
