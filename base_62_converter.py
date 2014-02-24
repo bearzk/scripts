@@ -26,7 +26,7 @@ def true_ord(char):
     Turns a digit [char] in character representation
     from the number system with base [BASE] into an integer.
     """
-    
+
     if char.isdigit():
         return ord(char) - DIGIT_OFFSET
     elif 'A' <= char <= 'Z':
@@ -67,12 +67,12 @@ def dehydrate(integer):
     Turn an integer [integer] into a base [BASE] number
     in string representation
     """
-    
+
     # we won't step into the while if integer is 0
     # so we just solve for that case here
     if integer == 0:
         return '0'
-    
+
     string = ""
     while integer > 0:
         remainder = integer % BASE
@@ -85,7 +85,7 @@ def _usage():
     print "and I don't understand %s" % sys.argv[1]
     sys.exit()
 
-if __name__ == '__main__': 
+if __name__ == '__main__':
     # not really unit tests just a rough check to see if anything is way off
     if sys.argv[1] == '-tests':
         passed_tests = True
@@ -93,10 +93,10 @@ if __name__ == '__main__':
             passed_tests &= (i == saturate(dehydrate(i)))
         print passed_tests
     else:
-        try: 
+        try:
             user_input = sys.argv[2]
         except:
-            _usag()
+            _usage()
         try:
             if sys.argv[1] == '-s':
                 print saturate(user_input)
